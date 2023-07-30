@@ -1,0 +1,69 @@
+*{
+	box-sizing: inherit;
+}
+
+@media print{
+	header {
+		display: none;
+	}
+}
+
+html {
+	box-sizing: border-box;
+}
+
+menu > li {
+	display: inline;
+	list-style: none;
+	padding: 0.5rem;
+}
+
+@media screen{
+	html {
+		color-scheme: light dark;
+		height: 90vh;
+	}
+	body {
+		display: grid;
+		grid: "head" fit-content(1rem) "main" auto;
+		height: 100%;
+	}
+
+	header {
+		grid-area: head;
+		color-scheme: light;
+		background-color: rgb(117,117,117);
+	}
+
+	#fileInput{
+		height: 0;
+		width: 0;
+		padding: 0;
+		opacity: 0;
+	}
+
+	label[for="fileInput"] {
+		text-align: center;
+	}
+
+	button{
+		color: inherit;
+		background: inherit;
+		font: inherit;
+		border: none;
+	}
+
+	:is(button,label[for="fileInput"]):hover {
+		background-color: dimgray;
+	}
+
+
+
+	#editor {
+		grid-area: main;
+		border: 1px solid;
+		height: 100%;
+		padding: 1rem;
+		overflow: scroll;
+	}
+}
